@@ -16,22 +16,16 @@ const MainApp = ({ onLogout }) => {
   const [activeTab, setActiveTab] = useState('dashboard');
 
   return (
-    <div className="container" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+    <div className="container app-shell">
       
       {/* Header / Navigation */}
-      <header className="glass-panel" style={{ 
-        display: 'flex', 
-        justifyContent: 'space-between', 
-        alignItems: 'center', 
-        marginBottom: '2rem',
-        padding: '1rem 2rem'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <span style={{ fontSize: '2.5rem' }}>🃏</span>
-          <h1 className="title-glow" style={{ margin: 0, fontSize: '2rem' }}>Spades HQ</h1>
+      <header className="glass-panel app-header">
+        <div className="app-brand">
+          <span className="app-logo">🃏</span>
+          <h1 className="title-glow app-title">Spades HQ</h1>
         </div>
         
-        <nav style={{ display: 'flex', gap: '1rem' }}>
+        <nav className="app-nav">
           <button 
             className={`btn ${activeTab === 'dashboard' ? 'btn-primary' : ''}`}
             onClick={() => setActiveTab('dashboard')}
@@ -60,7 +54,7 @@ const MainApp = ({ onLogout }) => {
       </header>
 
       {/* Main Content Area */}
-      <main style={{ flex: 1 }}>
+      <main className="app-main">
         {activeTab === 'dashboard' && <Dashboard />}
         {activeTab === 'play' && (activeGame ? <ActiveGame /> : <GameSetup />)}
         {activeTab === 'players' && <PlayerProfiles />}

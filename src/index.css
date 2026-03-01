@@ -206,6 +206,50 @@ input[type="number"] {
   width: 100%;
 }
 
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+}
+
+.app-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.app-logo {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.app-nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.app-main {
+  flex: 1;
+  min-width: 0;
+}
+
 .auth-shell {
   min-height: 100vh;
   display: flex;
@@ -311,6 +355,7 @@ input[type="number"] {
   display: flex;
   align-items: center;
   gap: 0.65rem;
+  min-width: 0;
 }
 
 .dashboard-avatar {
@@ -698,6 +743,55 @@ input[type="number"] {
   border-color: var(--neon-pink);
 }
 
+.active-game-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.active-game-grid,
+.active-action-panel {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.active-team-card {
+  text-align: center;
+}
+
+.active-team-card-blue {
+  border: 2px solid var(--neon-blue);
+}
+
+.active-team-card-pink {
+  border: 2px solid var(--neon-pink);
+}
+
+.active-team-score {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.active-team-score-blue {
+  color: var(--neon-blue);
+  text-shadow: 0 0 20px var(--neon-blue);
+}
+
+.active-team-score-pink {
+  color: var(--neon-pink);
+  text-shadow: 0 0 20px var(--neon-pink);
+}
+
+.active-log-btn {
+  padding: 0.75rem 3rem;
+  font-size: 1.25rem;
+}
+
+.active-finish-wrap {
+  margin-top: 2rem;
+}
+
 .active-round-entry {
   margin-top: 1rem;
   padding-top: 1rem;
@@ -880,5 +974,199 @@ input[type="number"] {
     margin-top: 0.75rem;
     justify-content: center;
     flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .app-header {
+    padding: 1rem 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .glass-panel {
+    padding: 1rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.65rem 0.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  .app-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    padding: 1rem;
+  }
+
+  .app-brand {
+    justify-content: center;
+  }
+
+  .app-logo {
+    font-size: 2rem;
+  }
+
+  .app-title {
+    font-size: 1.6rem;
+  }
+
+  .app-nav {
+    width: 100%;
+    justify-content: center;
+    gap: 0.65rem;
+  }
+
+  .app-nav .btn {
+    flex: 1 1 calc(50% - 0.4rem);
+    min-width: 130px;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-most-active-name {
+    font-size: 1rem;
+  }
+
+  .dashboard-avatar-lg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .game-setup-team {
+    min-height: auto;
+  }
+
+  .game-setup-selected-list {
+    min-height: 170px;
+  }
+
+  .setup-avatar.large,
+  .player-photo-large {
+    width: 86px;
+    height: 86px;
+  }
+
+  .game-setup-player-card,
+  .game-setup-selected-player,
+  .player-card-vertical {
+    min-height: 160px;
+  }
+
+  .player-upload-preview-wrap {
+    width: 130px;
+    height: 130px;
+  }
+
+  .active-team-avatar {
+    width: 54px;
+    height: 54px;
+  }
+
+  .active-team-score {
+    font-size: 3rem;
+  }
+
+  .active-log-btn,
+  .active-finish-btn {
+    width: 100%;
+  }
+
+  .active-round-fields,
+  .round-history-inline-edit {
+    grid-template-columns: 1fr;
+  }
+
+  .round-history-row {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .round-history-stat {
+    min-width: 0;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  .round-history-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .round-history-action-btn {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container,
+  .auth-shell {
+    padding: 0.75rem;
+  }
+
+  .app-brand {
+    gap: 0.6rem;
+  }
+
+  .app-title {
+    font-size: 1.35rem;
+  }
+
+  .app-nav {
+    flex-direction: column;
+  }
+
+  .app-nav .btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .dashboard-metric-value {
+    font-size: 1.7rem;
+  }
+
+  .dashboard-list-item {
+    gap: 0.5rem;
+  }
+
+  .badge {
+    font-size: 0.68rem;
+  }
+
+  .active-team-avatar {
+    width: 46px;
+    height: 46px;
+  }
+
+  .active-team-score {
+    font-size: 2.45rem;
+  }
+
+  .round-history-index {
+    min-width: 0;
+    font-size: 1.2rem;
+  }
+
+  .round-history-actions {
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .round-history-action-btn {
+    width: 100%;
   }
 }

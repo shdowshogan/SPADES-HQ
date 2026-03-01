@@ -90,13 +90,13 @@ export const ActiveGame = () => {
   };
 
   return (
-    <div className="animate-enter" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', alignItems: 'center' }}>
-      <div className="grid-2" style={{ width: '100%', maxWidth: '1100px' }}>
-        <div className="glass-panel" style={{ border: '2px solid var(--neon-blue)', textAlign: 'center' }}>
+    <div className="animate-enter active-game-shell">
+      <div className="grid-2 active-game-grid">
+        <div className="glass-panel active-team-card active-team-card-blue">
           <div className="active-team-header">
             {renderTeamAvatars(team1.players, 'blue')}
           </div>
-          <div style={{ fontSize: '4rem', fontWeight: 'bold', color: 'var(--neon-blue)', textShadow: '0 0 20px var(--neon-blue)' }}>
+          <div className="active-team-score active-team-score-blue">
             {team1.totalScore}
           </div>
           <div style={{ color: 'var(--text-muted)' }}>Bags: {team1.totalBags}</div>
@@ -129,11 +129,11 @@ export const ActiveGame = () => {
           </div>
         </div>
 
-        <div className="glass-panel" style={{ border: '2px solid var(--neon-pink)', textAlign: 'center' }}>
+        <div className="glass-panel active-team-card active-team-card-pink">
           <div className="active-team-header">
             {renderTeamAvatars(team2.players, 'pink')}
           </div>
-          <div style={{ fontSize: '4rem', fontWeight: 'bold', color: 'var(--neon-pink)', textShadow: '0 0 20px var(--neon-pink)' }}>
+          <div className="active-team-score active-team-score-pink">
             {team2.totalScore}
           </div>
           <div style={{ color: 'var(--text-muted)' }}>Bags: {team2.totalBags}</div>
@@ -167,16 +167,16 @@ export const ActiveGame = () => {
         </div>
       </div>
 
-      <div className="glass-panel" style={{ width: '100%', maxWidth: '1100px' }}>
+      <div className="glass-panel active-action-panel">
         <form onSubmit={handleLogRound} className="flex-center">
-          <button type="submit" className="btn btn-primary" style={{ padding: '0.75rem 3rem', fontSize: '1.25rem' }}>
+          <button type="submit" className="btn btn-primary active-log-btn">
             Log Round 📝
           </button>
         </form>
       </div>
 
       {rounds.length > 0 && (
-        <div className="glass-panel" style={{ width: '100%', maxWidth: '1100px' }}>
+        <div className="glass-panel active-action-panel">
           <h3 style={{ marginBottom: '1.5rem' }}>Round History</h3>
           <div className="round-history-list">
             {rounds.map((round, index) => (
@@ -268,8 +268,8 @@ export const ActiveGame = () => {
         </div>
       )}
 
-      <div className="flex-center" style={{ marginTop: '2rem' }}>
-        <button className="btn btn-danger" onClick={() => {
+      <div className="flex-center active-finish-wrap">
+        <button className="btn btn-danger active-finish-btn" onClick={() => {
           if (window.confirm("Are you sure you want to finish this game?")) {
             endGame();
           }
