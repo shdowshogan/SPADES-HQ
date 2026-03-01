@@ -11,6 +11,19 @@ Currently, two official plugins are available:
 
 The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
+## Admin Authentication
+
+This project uses a simple admin password gate before the portal can be accessed.
+
+- Set the password with an environment variable named `VITE_ADMIN_PASSWORD`.
+- Example `.env`:
+
+```env
+VITE_ADMIN_PASSWORD=your-secure-password
+```
+
+If this variable is not set, the app falls back to `admin123`.
+
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
